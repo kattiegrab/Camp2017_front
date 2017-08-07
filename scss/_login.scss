@@ -74,7 +74,7 @@
 			}
 			.btn {
 				background-color: inherit;
-				margin-bottom: 60px;
+				//margin-bottom: 60px;
 			}
 			.white-button {
 				background-color: white;
@@ -84,6 +84,18 @@
 				font-weight: 300;
 				animation: buttonAnime .5s infinite;
 			}
+			//password error class, invalid input
+			.error {
+				border: 2px solid red;
+			}
+			//pasword validation classes
+			.alert {
+				font-size: 11px;
+				font-weight: 300;
+				font-style: italic;
+				color: red;
+			}
+			//end of password validation classes
 		}
 			.bottom-nav {
 				ul {
