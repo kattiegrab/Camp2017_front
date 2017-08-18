@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Dashboard</title>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+<!-- ============= NAVIGATION ================= -->
+	<header>
+		<div class="row">
+			<div class=" column medium-4">
+				<div class="row">
+					<div class="column medium-3 logo-container">
+						<img class="logo" src="images/logo-efi3.png" alt="logo efi3">
+					</div>
+					<div class="column medium-3">
+						<img class="avatar" src="" alt="avatar image">
+					</div>
+					<div class="column medium-6">
+						<h3 class="username">Jan Kowalski</h3>
+						<span class="message-icon fa fa-envelope" aria-hidden="true"></span>
+						<span class="options-icon fa fa-cog" aria-hidden="true"></span>
+					</div>
+				</div>
+			</div>
+			<div class="main-menu column medium-4">
+				<nav class="main-nav">
+					<ul>
+						<li>
+							<a href="#" class="nav-item" role="button" tabindex="0" aria-labeledby="#itemlabel1">
+								<i class="fa fa-home" aria-hidden="true"></i>
+								<label id="itemlabel1">HOME</label>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="nav-item" role="button" tabindex="0" aria-labelledby="#itemlabel2">
+								<i class="fa fa-area-chart" aria-hidden="true"></i>
+								<label id="itemlabel2">ANALYZE</label>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="nav-item" role="button" tabindex="0" aria-labelledby="#itemlabel3">
+								<i class="fa fa-calendar-o" aria-hidden="true"></i>
+								<label id="itemlabel3">PLAN</label>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="nav-item" role="button" tabindex="0" aria-labelledby="#itemlabel4">
+								<i class="fa fa-money" aria-hidden="true"></i>
+								<label id="itemlabel4">EARN</label>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="search-and-off column medium-offset-2 medium-2">
+				<span class="fa fa-search" aria-hidden="true""></span>
+				<span class="turn-off fa fa-power-off" aria-hidden="true"></span>
+			</div>
+		</div>
+	</header>
+<!-- ================= MAIN INFO ================= -->
+	<section class="main-info">
+		<div class="row">
+			<div class="column large-8">
+				<h1>Finance life stream</h1>
+				<div class="row">
+					<div class="column large-4">
+						<p>Balance</p>
+					</div>
+					<div class="column large-4">
+						<p>Available funds</p>
+					</div>
+					<div class="column large-4">
+						<p>Scheduled payments</p>
+					</div>
+				</div>
+			</div>
+			<div class="column large-4">
+				
+			</div>
+		</div>
+	</section>
+	
+<!-- ============== CHART ================== -->
+	<section class="account-chart"></section>
+<!--============================================-->
+
+<!-- ======== CLIENT PRODUCTS AND HISTORY ====== -->
+	<section class="products-and-history">
+	<!-- ============== PRODUCTS ============ -->
+		<div class="row">
+			<div class="column large-6">
+				<h5>Products</h5>
+			</div>
+	<!-- ============ HISTORY ================= -->
+			<div class="column large-6">
+				<h5>History</h5>
+			</div>
+		</div>
+	</section>
+<!--==============  ==================-->
+
+<!-- ........ SCRIPTS ..........-->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/what-input/dist/what-input.js"></script>
+	<script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+	<script src="js/dashboard.js"></script>
+</body>
+</html>
