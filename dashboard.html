@@ -15,13 +15,26 @@
 					<div class="column medium-3 logo-container">
 						<img class="logo" src="images/logo-efi3.png" alt="logo efi3">
 					</div>
-					<div class="column medium-3">
-						<img class="avatar" src="" alt="avatar image">
+					<div class="column medium-3 avatar-container">
+						<img class="avatar" src="images/avatar-demo.png" alt="avatar image">
 					</div>
-					<div class="column medium-6">
+					<div class="column medium-6 user">
 						<h3 class="username">Jan Kowalski</h3>
-						<span class="message-icon fa fa-envelope" aria-hidden="true"></span>
-						<span class="options-icon fa fa-cog" aria-hidden="true"></span>
+						<i class="message-icon fa fa-envelope" aria-hidden="true"></i>
+						<i class="options-icon fa fa-cog" aria-hidden="true"></i>
+					</div>
+					<div class="messages">
+						<div class="message">
+							<i class="fa fa-info-circle" aria-hidden="true"></i>
+							<p>Your gas budget was overspent by 5%!</p>
+						</div>
+						<div class="message">
+							<i class="fa fa-commenting" aria-hidden="true"></i>
+							<p>Your scheduled 500 PLN payment for tommorow.</p>
+						</div>
+						<div class="inbox">
+							<a href="#">SEE ALL</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -56,8 +69,12 @@
 				</nav>
 			</div>
 			<div class="search-and-off column medium-offset-2 medium-2">
-				<span class="fa fa-search" aria-hidden="true""></span>
-				<span class="turn-off fa fa-power-off" aria-hidden="true"></span>
+				<div class="icon search-icon">
+					<i class="fa fa-search" aria-hidden="true""></i>
+				</div>
+				<div class="icon off-icon">
+					<i class="turn-off fa fa-power-off" aria-hidden="true"></i>
+				</div>
 			</div>
 		</div>
 	</header>
@@ -69,12 +86,15 @@
 				<div class="row">
 					<div class="column large-4">
 						<p>Balance</p>
+						<p id="balance"></p>
 					</div>
 					<div class="column large-4">
 						<p>Available funds</p>
+						<p id="funds"></p>
 					</div>
 					<div class="column large-4">
 						<p>Scheduled payments</p>
+						<p id="payments"></p>
 					</div>
 				</div>
 			</div>
@@ -83,27 +103,66 @@
 			</div>
 		</div>
 	</section>
-	
 <!-- ============== CHART ================== -->
-	<section class="account-chart"></section>
+	<section class="account-chart">
+		<div class="row">
+			<div class="column large-12">
+				<canvas id="myChart" width="1200px" height="480px"></canvas>
+			</div>
+		</div>
+	</section>
 <!--============================================-->
-
 <!-- ======== CLIENT PRODUCTS AND HISTORY ====== -->
 	<section class="products-and-history">
 	<!-- ============== PRODUCTS ============ -->
 		<div class="row">
 			<div class="column large-6">
 				<h5>Products</h5>
+				<div class="row">
+					<div class="column large-6">
+						<div class="product-container">
+							<div class="product-icon">
+								<i class="fa fa-folder-open" aria-hidden="true"></i>
+							</div>
+							<div class="wallet"></div>
+						</div>
+						<div class="product-container">
+							<div class="product-icon"></div>
+							<div class="accounts"></div>
+						</div>
+						<div class="product-container">
+							<div class="product-icon"></div>
+							<div class="loans"></div>
+						</div>
+					</div>
+					<div class="column large-6">
+						<div class="product-container">
+							<div class="product-icon"></div>
+							<div class="deposits"></div>
+						</div>
+						<div class="product-container">
+							<div class="product-icon"></div>
+							<div class="funds"></div>
+						</div>
+					</div>
+				</div>
 			</div>
 	<!-- ============ HISTORY ================= -->
 			<div class="column large-6">
 				<h5>History</h5>
+				<div class="row">
+					<div class="column large-12 history-element">
+						<div class="history-date"></div>
+						<div class="history-info"></div>
+						<div class="history-amount"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 <!--==============  ==================-->
-
 <!-- ........ SCRIPTS ..........-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/what-input/dist/what-input.js"></script>
 	<script src="bower_components/foundation-sites/dist/js/foundation.js"></script>

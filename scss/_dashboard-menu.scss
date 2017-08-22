@@ -1,27 +1,101 @@
 body {
-	background-color: #b2b2b2;
+	background-color: #DADBDB;
 	font-family: 'Roboto Condensed', sans-serif !important;
 	header {
-		background-color: #13bdd2;
-		color: white;
+		background-color: #0ABED3;
+		color: #fff;
 		height: 120px;
 			.logo-container {
-				height: 60px;
+				height: 80px;
+				width: 80px;
 				margin-top: 25px;
 				border-radius: 5px;
 	        	border: 2px solid rgba(254,254,254,0.3);
+	        	padding: 15px;
+	        	text-align: center;
+	        	// background: url('images/avatar-demo.png') 0/cover no-repeat;
 	        	.logo {
-	        		height: 40px;
-	        		padding: 10px;
-	        	}
-	        	h3 {
-	        		font-size: 25px;
-	        		font-weight: 300;
+	        		height: 35px;
 	        	}
 			}
+			.avatar-container {
+				margin-top: 25px;
+				padding-left: 0;
+				.avatar {
+					height: auto;
+					width: 80px;
+					border-radius: 5px;
+				}
+        	}
+			.user {
+			    	margin-top: 25px; 
+			    	.username {
+			    		font-size: 25px;
+			    	}
+			    	i.fa {
+			    		font-size: 20px;
+			    		cursor: pointer;
+			    	}
+			    	.options-icon {
+			    		margin-left: 20px;
+			    	}
+			    }
+		    // messages
+		    .messages {
+		    	display: none;
+		    	position: absolute;
+		    	left: 200px;
+		    	top: 100px;
+		    	background-color: #000;
+		    	border-radius: 5px;
+		    	&::before {
+		    		content: '';
+		    		width: 0px;
+					height: 0px;
+					border-style: solid;
+					border-width: 10px 15px 10px 0;
+					border-color: transparent #000 transparent transparent;
+					position: absolute;
+					left: 95px;
+					top: -10px;
+		    	}
+		    	.message {
+		    		border-bottom: 1px solid #fff;
+		    		padding: 10px;
+		    		margin-top: 10px;
+		    		display: flex;
+		    		i.fa {
+		    			flex: 1;
+						font-size: 35px;
+						margin: -10px 10px 0 10px;
+						padding-top: 10px;
+						border-radius: 2px;
+						text-align: center;
+		    		}
+		    		i.fa-info-circle {
+						background-color: #C50E16;
+		    		}
+		    		i.fa-commenting {
+		    			background-color: #0BA034;
+		    			margin-bottom: 20px;
+		    		}
+		    		p {
+		    			flex: 4;
+		    			cursor: pointer;
+		    			&:hover {
+		    				opacity: 0.8;
+		    			}
+		    		}
+		    	}
+		    	.inbox {
+		    		padding: 10px;
+		    		text-align: center;
+		    	}
+		    }
+		    //=============
 		.main-nav {
 			width: 400px;
-			height: 100%;
+			height: 120px;
 			ul {
 				height: 100%;
 				margin: 0;
@@ -30,6 +104,7 @@ body {
 			    flex-wrap: wrap;
 			    justify-content: center;
 			    list-style: none;
+
 			    a {
 			    	width: 100px;
 			    	height: 100%;
@@ -41,18 +116,18 @@ body {
 				    display: flex;
 				    flex-direction: column;
 				    align-items: center;
-				    color: white;
+				    color: #fff;
 				    &:hover, &:focus {
-				    	background-color: black;
+				    	background-color: #000;
 				    }
 				    &:hover::after {
 				    	content: '';
 				    	height: 20px;
 				    	width: 20px;
 				    	line-height: 20px;
-				    	border: 1px solid black;
+				    	border: 1px solid #000;
 				    	border-radius: 50%;
-				    	background-color: black;
+				    	background-color: #000;
 				    	position: absolute;
 				    	margin-top: 85px;
 				    }
@@ -60,7 +135,7 @@ body {
 				    	font-size: 40px;
 				    }
 				    label {
-				    	color: white;
+				    	color: #fff;
 				    	display: block;
 				    }
 				  }
@@ -71,14 +146,18 @@ body {
 			justify-content: center;
 			align-items: center;
 			font-size: 40px;
-			span.fa {
+			i.fa {
 				margin-right: 10px;
 				margin-left: 10px;
+				cursor: pointer;
 			}
-			.turn-off {
-				&::before {
-					border-left: 1px solid white;
-					
+			.search-icon {
+
+			}
+			.off-icon {
+				border-left: 2px solid #64D5E2;
+				&:hover {
+					color: #E31361;
 				}
 			}
 		}
@@ -86,5 +165,19 @@ body {
 	.main-info {
 		margin-top: 40px;
 
+	}
+	#myChart {
+		background-color: #fff;
+		border-radius: 5px;
+		margin: 10px 0 10px;
+	}
+	.products-and-history {
+		.product-container {
+			
+			background-color: #fff;
+			.product-icon {
+				font-size: 20px;
+			}
+		}
 	}
 }
