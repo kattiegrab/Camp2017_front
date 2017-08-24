@@ -81,32 +81,47 @@
 <!-- ================= MAIN INFO ================= -->
 	<section class="main-info">
 		<div class="row">
-			<div class="column large-8">
+			<div class="column medium-8">
 				<h1>Finance life stream</h1>
 				<div class="row">
-					<div class="column large-4">
+					<div class="column medium-4">
 						<p>Balance</p>
 						<p id="balance"></p>
 					</div>
-					<div class="column large-4">
+					<div class="column medium-4">
 						<p>Available funds</p>
 						<p id="funds"></p>
 					</div>
-					<div class="column large-4">
+					<div class="column medium-4">
 						<p>Scheduled payments</p>
 						<p id="payments"></p>
 					</div>
 				</div>
 			</div>
-			<div class="column large-4">
-				
+			<div class="column medium-4">
+				<div class="add-options">	
+					<p>Add</p>
+					<a href="#" class="button small">BANK</a>
+					<a href="#" class="button small">PAYMENT</a>
+				</div>
+				<div class="acc-analysis">
+					<p>Account analysis</p>
+					<div class="switch small" tabindex="0">
+						<input class="switch-input" id="switchChart" type="checkbox" name="switchCharts">
+						<label class="switch-paddle" for="switchChart">
+							<span class="show-for-sr">Switch Charts</span>
+							<span class="switch-active" aria-hidden="true">On</span>
+    						<span class="switch-inactive" aria-hidden="true">Off</span>
+						</label>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 <!-- ============== CHART ================== -->
 	<section class="account-chart">
 		<div class="row">
-			<div class="column large-12">
+			<div class="column medium-12">
 				<canvas id="myChart" width="1200px" height="480px"></canvas>
 			</div>
 		</div>
@@ -116,47 +131,14 @@
 	<section class="products-and-history">
 	<!-- ============== PRODUCTS ============ -->
 		<div class="row">
-			<div class="column large-6">
+			<div class="column medium-6">
 				<h5>Products</h5>
-				<div class="row">
-					<div class="column large-6">
-						<div class="product-container">
-							<div class="product-icon">
-								<i class="fa fa-folder-open" aria-hidden="true"></i>
-							</div>
-							<div class="wallet"></div>
-						</div>
-						<div class="product-container">
-							<div class="product-icon"></div>
-							<div class="accounts"></div>
-						</div>
-						<div class="product-container">
-							<div class="product-icon"></div>
-							<div class="loans"></div>
-						</div>
-					</div>
-					<div class="column large-6">
-						<div class="product-container">
-							<div class="product-icon"></div>
-							<div class="deposits"></div>
-						</div>
-						<div class="product-container">
-							<div class="product-icon"></div>
-							<div class="funds"></div>
-						</div>
-					</div>
-				</div>
+				<div class="products-container"></div>
 			</div>
 	<!-- ============ HISTORY ================= -->
-			<div class="column large-6">
+			<div class="column medium-6">
 				<h5>History</h5>
-				<div class="row">
-					<div class="column large-12 history-element">
-						<div class="history-date"></div>
-						<div class="history-info"></div>
-						<div class="history-amount"></div>
-					</div>
-				</div>
+				<div class="history-container"></div>
 			</div>
 		</div>
 	</section>
