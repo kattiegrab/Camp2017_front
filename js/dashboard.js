@@ -1,5 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     (function () {
+// =================== nav buttons ===================
+		const logoutButton = document.querySelector('.off-icon');
+		logoutButton.addEventListener('click', (event) => {
+			window.location = "index.html";
+		});
 // ============= message window =====================
     	const messages = document.querySelector('.message-icon');
     	const messagesContainer = document.querySelector('.messages');
@@ -80,46 +85,19 @@ document.addEventListener('DOMContentLoaded', function () {
 			// });
 
 			const productsList = data.content;
-			// const productTemplate = (data) => {
-
-			// 	let icon;
-
-			// 	switch(data.type) {
-			// 		case "Wallet":
-			// 			icon = "../images/wallet.png";
-			// 		break;
-			// 		case "Deposits":
-			// 			icon = "../images/piggy.png";
-			// 		break;
-			// 		case "Accounts":
-			// 			icon = "../images/mymoney.png";
-			// 		break;
-			// 		case "Funds":
-			// 			icon = "../images/chart.png";
-			// 		break;
-			// 		default:
-			// 			icon = "../images/hand.svg";
-			// 		break;
-			// 	}
-
-			// }
-
+		
 			const productContainer = document.querySelector('.products-container');
 
 			productsList.forEach((element, index) => {
 				console.log(`Iteracja: ${index}`, element);
 
-				const productTemplate = `
-						<div class='product-item'>
-							<p>${element.type}</p>
+				const productTemplate = 
+						`<div class='product-item'>
+							<p>${element.type} <span class="product-ele">[${element.elements}]</span></p>
 							<p>${element.amount} ${element.currency}<p>
 						</div>`;
 				
 				productContainer.insertAdjacentHTML('beforeend', productTemplate);
-
-				//productsContainer.insertHTML(productTemplate);
-				//.prepend
-				//.insertAdjacentHTML('beforeend', productTemplate);
 			});
 		});
 	};
@@ -138,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					<span>${element.date}</span>
 					<span>${element.description}</span>
 					<span>${element.category}</span>
-					<span>${element.amount} ${element.currency}</span>
+					<span class="history-amount">${element.amount} ${element.currency}</span>
 				</div>`;
 
 				historyContainer.insertAdjacentHTML('beforeend', historyTemplate);
