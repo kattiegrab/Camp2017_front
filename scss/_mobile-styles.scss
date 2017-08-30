@@ -1,0 +1,51 @@
+@media screen and (min-width: 801px) {
+	.mobile-menu,
+	.mobile-logo, 
+	.mobile-messages {
+		display: none;
+	}
+}
+@media screen and (max-width: 800px) {
+	.mobile-hidden {
+		display: none;
+	}
+	header {
+		height: 60px;
+			.main-menu, 
+			.logo-container,
+			.avatar-container,
+			.user,
+			.messages,
+			.search-icon,
+			.off-icon {
+				display: none;
+			}
+			.mobile-menu {
+				display: block;
+				.title-bar {
+					background-color: #0ABED3;
+					.menu-icon {
+						margin: 10px;
+					}
+				}
+			}
+			.mobile-logo {
+				img {
+					height: 40px;
+					margin-top: 10px;
+				}
+			}
+			.mobile-messages {
+				margin-top: 10px;
+				font-size: 30px;
+				cursor: pointer;
+			}
+		}
+	.products-and-history {
+		.products-container	{
+			.product-item {
+				flex-basis: 100%;
+			}
+		}
+	}
+}

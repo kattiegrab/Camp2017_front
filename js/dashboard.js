@@ -15,8 +15,15 @@ document.addEventListener('DOMContentLoaded', function () {
     			messagesContainer.style.display = "none"
     		}
     	});
-    	// 
 // ============== end of message window ============= 
+// ================= switch charts ================
+		// const switchCharts = document.querySelector('.switch-input');
+		// const mainChart = document.querySelector('#my-chart');
+		
+		// switchCharts.addEventListener('click', () => {
+		
+		// });
+
 // ============ CHART =================
 		const ctx = document.querySelector('#myChart').getContext('2d');
 		let chart = new Chart(ctx, {
@@ -26,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	    // The data for our dataset
 	    data: {
 	        labels: ["1", "3", "7", "11", "14", "21", "25"],
+	        //labels: [];
 	        datasets: [{
 	        	label: "Account history",
 	            backgroundColor: '#007AB7',
@@ -91,12 +99,12 @@ document.addEventListener('DOMContentLoaded', function () {
 			productsList.forEach((element, index) => {
 				console.log(`Iteracja: ${index}`, element);
 
-				const productTemplate = 
-						`<div class='product-item'>
+				const productTemplate =  `
+						<div class='product-item'>
 							<p>${element.type} <span class="product-ele">[${element.elements}]</span></p>
 							<p>${element.amount} ${element.currency}<p>
 						</div>`;
-				
+
 				productContainer.insertAdjacentHTML('beforeend', productTemplate);
 			});
 		});
@@ -114,8 +122,10 @@ document.addEventListener('DOMContentLoaded', function () {
 				const historyTemplate = `
 				<div class="history-item">
 					<span>${element.date}</span>
-					<span>${element.description}</span>
-					<span>${element.category}</span>
+					<span class="history-desc">
+						${element.description}
+					</span>
+					<span class="history-category">${element.category}</span>
 					<span class="history-amount">${element.amount} ${element.currency}</span>
 				</div>`;
 
