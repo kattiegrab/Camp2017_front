@@ -1,0 +1,131 @@
+.transfer-form {
+	background-color: #fff;
+	margin: 65px;
+	border-radius: 5px;
+	padding: 10px;
+	.back-button {
+			margin: 10px 0 10px 0;
+		}
+	.account-details {
+		margin: 20px 0 40px;
+		border: 1px solid #DADADA;
+		border-radius: 5px;
+		padding: 20px;
+		.account-icon {
+			margin: 10px 0 0 20px;
+		}
+		.account-number {
+			p {
+				margin: 0;
+			}
+		}
+		.account-balance {
+			#balance {
+				text-align: end;
+			}
+		}
+		.account-select {
+			height: 100%;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			img {
+				height: 20px;
+				width: auto;
+			}
+		}
+	}
+	.add-account {
+		display: flex;
+		justify-content: center;
+		p {
+			padding-left: 15px;
+		}
+	}
+	.radio {
+		display: flex;
+		input {
+			&[type='radio'] {
+				display: none;
+			}
+		}
+		label {
+			cursor: pointer;
+			position: relative;
+			&:before {
+				content: "";
+  				display: inline-block;
+  				width: 30px;
+				height: 30px;
+				margin-right: 10px;
+				position: absolute;
+				left: 0;
+				bottom: 1px;
+				background-color: #fff;
+				box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(203, 201, 201, .8);
+				border-radius: 50%;
+			}
+		}
+		input {
+			&[type='radio']:checked + label:before {
+		    content: "\2022";
+		    color: green;
+		    font-size: 30px;
+		    text-align: center;
+		    line-height: 18px;
+			}
+		}
+	}
+	input {
+		&[type='text'] {
+			border-radius: 5px;
+		}
+	}
+	.transfer-element {
+		// width: 50px;
+		// height: 50px;
+		// line-height: 50px;
+		// margin: 10px;
+		// background-color: #A0A0A0;
+		.country {
+
+		}
+	}
+	.acc-number {
+		.number {
+			width: 350px;
+		}
+	}
+	.sum {
+		width: 200px;
+	}
+	.select-currency {
+		.currency {
+			border-radius: 5px;
+			margin-left: 10px;
+			width: 80px;
+			background-image: url('../images/payment/blue-arrow.svg');
+			background-size: 20px 10px;
+		}
+	}
+	.data-picker {
+		width: 150px;
+		margin: 10px 0 10px;
+		position: relative;
+		.when-icon {
+			background: url('../images/payment/when-icon.svg') 0/cover no-repeat;
+			height: 25px;
+			width: 25px;
+			line-height: 25px;
+			position: absolute;
+			top: 8px;
+			right: 10px;
+		}
+	}
+	.btn-continue {
+		border-radius: 5px;
+		width: 150px;
+		background-color: #0ABFD4;
+		margin-top: 10px;
+	}
+}

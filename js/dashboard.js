@@ -5,17 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		logoutButton.addEventListener('click', (event) => {
 			window.location = "index.html";
 		});
-// ============= message window =====================
-    	const messages = document.querySelector('.message-icon');
-    	const messagesContainer = document.querySelector('.messages');
-    	messages.addEventListener('click', () => {
-    		if (messagesContainer.style.display === "none") {
-    			messagesContainer.style.display = "block";
-    		} else {
-    			messagesContainer.style.display = "none"
-    		}
-    	});
-// ============== end of message window ============= 
 // ================= switch charts ================
 		// const switchCharts = document.querySelector('.switch-input');
 		// const mainChart = document.querySelector('#my-chart');
@@ -138,3 +127,12 @@ document.addEventListener('DOMContentLoaded', function () {
 // =================== end of get data ================= 
  	})(); //end of main function
 }); //end of doc event listener
+
+//===============================================
+// zadanie 30.08
+//zrobic walidacje formularza przlewów
+//link do historii
+//search z historii, filtrowanie wyników
+//widok kalendarza, obsługa strzałek js, obiekt date??
+//podpowiedź w search po wpisaniu ilku liter
+//tooltip do znaku zap.

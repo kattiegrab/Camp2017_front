@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Payment</title>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  	<link rel="stylesheet" href="/resources/demos/style.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+<!-- ============= NAVIGATION ================= -->
+	<header>
+<!-- ======== menu for smaller devices ===== -->
+	<div class="row">
+		<div class="mobile-menu column small-2">
+			<div class="off-canvas title-bar" id="offCanvas" data-off-canvas>
+			  <div class="title-bar-left">
+			    <button class="menu-icon" type="button" data-open="offCanvasTop"></button>
+			    <span class="title-bar-title"></span>
+			  </div>
+			</div>
+		</div>
+		<div class="mobile-logo column small-4 small-offset-3">
+			<img class="logo" src="images/logo-efi3.png" alt="logo efi3">
+		</div>
+		<div class="mobile-messages column small-offset-2 small-1">
+			<i class="message-icon mobile-message-icon fa fa-envelope" aria-hidden="true"></i>
+		</div>
+	</div>
+<!-- ====== end of menu for smaller devices ===== -->
+<!-- ====== default menu ======= -->
+		<div class="row">
+			<div class=" column medium-4">
+				<div class="row">
+					<div class="column medium-3 logo-container">
+						<img class="logo" src="images/logo-efi3.png" alt="logo efi3">
+					</div>
+					<div class="column medium-3 avatar-container">
+						<img class="avatar" src="images/avatar-demo.png" alt="avatar image">
+					</div>
+					<div class="column medium-6 user">
+						<h3 class="username">Jan Kowalski</h3>
+						<i class="open-messages message-icon fa fa-envelope" aria-hidden="true"></i>
+						<i class="options-icon fa fa-cog" aria-hidden="true"></i>
+					</div>
+					<div class="messages">
+						<div class="message">
+							<i class="fa fa-info-circle" aria-hidden="true"></i>
+							<p>Your gas budget was overspent by 5%!</p>
+						</div>
+						<div class="message">
+							<i class="fa fa-commenting" aria-hidden="true"></i>
+							<p>Your scheduled 500 PLN payment for tommorow.</p>
+						</div>
+						<div class="inbox">
+							<a href="#">SEE ALL</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main-menu column medium-4">
+				<nav class="main-nav">
+					<ul>
+						<li>
+							<a href="#" class="nav-item" role="button" tabindex="0" aria-labeledby="#itemlabel1">
+								<i class="fa fa-home" aria-hidden="true"></i>
+								<label id="itemlabel1">HOME</label>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="nav-item" role="button" tabindex="0" aria-labelledby="#itemlabel2">
+								<i class="fa fa-area-chart" aria-hidden="true"></i>
+								<label id="itemlabel2">ANALYZE</label>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="nav-item" role="button" tabindex="0" aria-labelledby="#itemlabel3">
+								<i class="fa fa-calendar-o" aria-hidden="true"></i>
+								<label id="itemlabel3">PLAN</label>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="nav-item" role="button" tabindex="0" aria-labelledby="#itemlabel4">
+								<i class="fa fa-money" aria-hidden="true"></i>
+								<label id="itemlabel4">EARN</label>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="search-and-off column medium-offset-2 medium-2">
+				<div class="icon search-icon">
+					<i class="fa fa-search" aria-hidden="true""></i>
+				</div>
+				<div class="icon off-icon">
+					<i class="turn-off fa fa-power-off" aria-hidden="true"></i>
+				</div>
+			</div>
+		</div>
+	</header>
+<!-- ================================================ -->
+<!-- ================ PAYMENT FORM ====================== -->
+<!-- ================================================ -->
+<section class="payment">
+	<form class="transfer-form">
+	<!-- =========== Back to ... button ========== -->
+		<div class="row">
+			<div class="column small-12">
+				<div class="back-button">
+					<a href="#">
+						<img src="images/payment/back-arrow.svg" alt="back arrow">
+					</a>
+				</div>
+			</div>
+		</div>
+	<!-- ========= Account Details ============== -->
+		<div class="account-details">
+			<div class="row">
+				<div class="small-1 column">
+					<div class="account-icon">
+						<img src="images/payment/account-icon.svg" alt="account icon">
+					</div>
+				</div>
+				<div class="column small-5">
+					<div class="account-number">
+						<p>Current Account</p>
+						<p>00 0000 0000 0000 0000 0000 0000</p>
+					</div>
+				</div>
+				<div class="column small-5">
+					<div class="account-balance">
+						<h2 id="balance"></h2>
+					</div>
+				</div>
+				<div class="column small-1">
+					<div class="account-select">
+						<img src="images/payment/lightblue-arrow.svg" alt="account-select">
+					</div>
+				</div>
+			</div>	
+		</div>
+	<!-- =========== Add account ============ -->
+		<div class="row">
+			<div class="column small-12">
+				<div class="add-account">
+					<div class="add-button">
+						<img src="images/payment/plus-button.svg" alt="add account button">
+					</div>
+					<p>Add the account from which you draw funds</p>
+				</div>
+			</div>
+		</div>
+		<!-- ======== TYPE ================ -->
+		<div class="form-element">
+			<div class="row">
+				<div class="column small-4">
+					<p class="form-title">Type</p>
+				</div>
+				<div class="column small-8">
+					<div class="radio">
+						<div class="transfer-element">	
+							<label for="#country" class="country">
+								<input id="country" type="radio" name="transfer-type" value="">
+								<span class="transfer-text">Country</span>
+							</label>
+						</div>
+						<div class="transfer-element ">
+							<input id="own" type="radio" name="transfer-type" value="">
+							<label for="#own">
+								<img src="">
+								<span class="transfer-text">Own</span>
+							</label>
+						</div>
+						<div class="transfer-element">
+							<input id="currencies" type="radio" name="transfer-type" value="">
+							<label 	for="#currencies">
+								<img src="">
+								<span class="transfer-text">Currencies</span>
+							</label>
+						</div>
+						<div class="transfer-element">
+							<input id="zus" type="radio" name="transfer-type" value="">
+							<label for="#zus">
+								<img src="">
+								<span class="transfer-text">ZUS</span>
+							</label>
+						</div>
+						<div class="transfer-element">
+							<input id="tax" type="radio" name="transfer-type" value="">
+							<label for="#tax">
+								<img src="">
+								<span class="transfer-text">TAX</span>
+							</label>
+						</div>
+						<div class="transfer-element">
+							<input id="gsm" type="radio" name="transfer-type" value="">
+							<label for="#gsm">
+								<img src="">
+								<span class="transfer-text">GSM</span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- =============== RECIPIENT ==================== -->
+		<div class="form-element">
+			<div class="row">
+				<div class="column small-4">
+					<p class="form-title">Recipient</p>
+				</div>
+				<div class="column small-8">
+					<input type="text" name="recipient" placeholder="Search for a recipient , contractor or customer">
+				</div>
+			</div>
+		</div>
+	<!-- ============ Where (send money)==================== -->
+		<div class="form-element">
+			<div class="row">
+				<div class="column small-4">
+					<p class="form-title">Where</p>
+				</div>
+				<div class="column small-8">
+					<div class="radio">
+						<div class="where-element">
+							<input id="account" type="radio" name="" value="">
+							<label for="#account">Account</label>
+						</div>
+						<div class="where-element">
+							<input id="facebook" type="radio" name="" value="">
+							<label for="#facebook">Facebook</label>
+						</div>
+						<div class="where-element">
+							<input id="phone" type="radio" name="" value="">
+							<label for="#phone">Phone</label>
+						</div>
+						<div class="where-element">	
+							<input id="email" type="radio" name="" value="">
+							<label for="">E-mail</label>
+						</div>
+						<div class="where-element">
+							<input id="byphone" type="radio" name="" value="">
+							<label for="#byphone">By Phone</label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- ================= Number (account number?) ============================= -->
+		<div class="form-element">
+			<div class="row">
+				<div class="column small-4">
+					<p class="form-title">Number</p>
+				</div>
+				<div class="column small-8">
+					<div class="acc-number">
+						<input type="text" name="number" class="number">
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- ================ Sum ====================== -->
+		<div class="form-element">
+			<div class="row">
+				<div class="column small-4">
+					<p class="form-title">Sum</p>
+				</div>
+				<div class="column small-2">
+					<div class="sum">
+						<input type="text" name="sum">
+					</div>
+				</div>
+				<div class="column small-2">
+					<div class="select-currency">
+						<select class="currency">
+							<option value="PLN">PLN</option>
+							<option value="EUR">EUR</option>
+							<option value="USD">USD</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>	
+	<!-- ============ When - data picker ============ -->
+		<div class="form-element">
+			<div class="row">
+				<div class="column small-4">
+					<p class="form-title">When</p>
+				</div>
+				<div class="column small-8">
+					<div class="data-picker">
+						<input type="text" name="when" id="datepicker">
+						<span class="when-icon"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- ================ Title ===================== -->
+			<div class="form-element">
+				<div class="row">
+					<div class="column small-4">
+						<p class="form-title">Title</p>
+					</div>
+					<div class="column small-8">
+						<input type="text" name="title" placeholder="Title">
+					</div>
+				</div>
+			</div>	
+	<!--  ================= Type of transfer (how long?)================== -->
+			<div class="form-element">
+				<div class="row">
+					<div class="column small-4">
+						<p class="form-title">Type of transfer</p>
+					</div>
+					<div class="column small-8">
+						<div class="radio">
+							<div class="type-element">
+								<input id="normaly" type="radio" name="typeOfTransfer" value="normaly">
+								<label for="#normaly">Normaly</label>
+								<span>about 2 days</span>
+							</div>
+							<div class="type-element">
+								<input id="express" type="radio" name="typeOfTransfer" value="express">
+								<label for="#express">Express Elixir</label>
+								<span>15 min</span>
+							</div>
+							<div class="type-element">
+								<input id="sorbnet" type="radio" name="typeOfTransfer" value="sorbnet">
+								<label for="#sorbnet">Sorbnet</label>
+								<span>2 hours</span>
+							</div>
+							<div class="transfer-tooltip">
+								<span>?</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	<!-- ========= CONTINUE BUTTON ============== -->
+		<div class="row">
+			<div class="column small-offset-4 small-10">
+				<a href="#" class="button btn-continue">CONTINUE</a>
+			</div>
+		</div>
+	</form>
+</section>
+<!--==============  ==================-->
+<!-- ........ SCRIPTS ..........-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="bower_components/what-input/dist/what-input.js"></script>
+	<script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+	<script src="js/payment.js"></script>
+	<script src="js/account-inbox.js"></script>
+</body>
+</html>
