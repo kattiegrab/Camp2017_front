@@ -91,7 +91,7 @@
 			</div>
 			<div class="search-and-off column medium-offset-2 medium-2">
 				<div class="icon search-icon">
-					<i class="fa fa-search" aria-hidden="true""></i>
+					<i class="fa fa-search" aria-hidden="true"></i>
 				</div>
 				<div class="icon off-icon">
 					<i class="turn-off fa fa-power-off" aria-hidden="true"></i>
@@ -99,7 +99,7 @@
 			</div>
 		</div>
 	</header>
-<!-- ================================================ -->
+ <!-- ================================================  -->
 <!-- ================ PAYMENT FORM ====================== -->
 <!-- ================================================ -->
 <section class="payment">
@@ -229,7 +229,7 @@
 						<div class="column small-8">
 							<div class="radio">
 								<label>
-									<input type="radio" name="where" value="account">
+									<input type="radio" name="where" value="account" required>
 									<p>Account</p>
 								</label>
 								<label>
@@ -260,7 +260,8 @@
 						</div>
 						<div class="column small-8">
 							<div class="acc-number">
-								<input type="text" name="number" class="number">
+								<input class="acc-num" type="text" name="number" class="number">
+								<p class="error-msg num-error-msg"></p>
 							</div>
 						</div>
 					</div>
@@ -273,7 +274,8 @@
 						</div>
 						<div class="column small-2">
 							<div class="sum">
-								<input type="text" name="sum">
+								<input class="sum-input" type="text" name="sum">
+								<p class="error-msg sum-error-msg"></p>
 							</div>
 						</div>
 						<div class="column small-2">
@@ -295,8 +297,9 @@
 						</div>
 						<div class="column small-8">
 							<div class="data-picker">
-								<input type="text" name="when" id="datepicker">
+								<input class="date-input" type="text" name="when" id="datepicker">
 								<span class="when-icon"></span>
+								<p class="error-msg date-error"></p>
 							</div>
 						</div>
 					</div>
@@ -308,7 +311,8 @@
 							<p class="form-title">Title</p>
 						</div>
 						<div class="column small-8">
-							<input type="text" name="title" placeholder="Title">
+							<input class="transfer-title" type="text" name="title" placeholder="Title">
+							<p class="error-msg title-error-msg"></p>
 						</div>
 					</div>
 				</div>	
@@ -321,7 +325,7 @@
 						<div class="column small-8">
 							<div class="radio">
 								<label>
-									<input type="radio" name="typeOfTransfer" value="normaly">
+									<input type="radio" name="typeOfTransfer" value="normaly" required>
 									<div class="type-label">
 										<p>Normaly</p>
 										<span>about 2 days</span>
